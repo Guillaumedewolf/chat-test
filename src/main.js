@@ -17,12 +17,12 @@ import App from './App'
 Vue.use(VueFire)
 // activation DB
  var config = {
-    apiKey: "AIzaSyBiyOTVA_t9bmtw-5uNqBmzZWsIAnhClOU",
-    authDomain: "chat-ryverbis.firebaseapp.com",
-    databaseURL: "https://chat-ryverbis.firebaseio.com",
-    projectId: "chat-ryverbis",
-    storageBucket: "chat-ryverbis.appspot.com",
-    messagingSenderId: "156374615732"
+   apiKey: "AIzaSyCTgLAxSweaSst3pIxqhJ9pql3T1LrdBQA",
+    authDomain: "test-chat-188d8.firebaseapp.com",
+    databaseURL: "https://test-chat-188d8.firebaseio.com",
+    projectId: "test-chat-188d8",
+    storageBucket: "test-chat-188d8.appspot.com",
+    messagingSenderId: "1012304882000"
   }
 var firebaseApp = firebase.initializeApp(config)
 export const db = firebase.firestore()
