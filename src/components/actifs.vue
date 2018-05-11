@@ -1,7 +1,7 @@
 <!-- zone affichage message -->
 <!-- ===================== template ===================== -->
 <template>
-	<div>
+	<div class="actifsCSS">
 		<div class="actifs" v-for="actif in actifs">{{actif}}</div>
 	</div>
 </template>
@@ -29,7 +29,8 @@ data () {
 methods: {
 	afficherActifs () {
 		console.log('ok actifs');
-		db.collection("users").where('actif','==',true).onSnapshot(querySnapshot => {	
+		db.collection("users").where('actif','==',true).onSnapshot(querySnapshot => {
+		this.actifs = ['actifs']	
         querySnapshot.forEach(doc => {
            this.actifs.push(doc.data().name)
         })
@@ -56,5 +57,7 @@ created (){
 <!-- ====================== CSS ========================== -->
 
 <style>
-	
+	.actifsCSS {
+		position: absolute;
+	}
 </style>

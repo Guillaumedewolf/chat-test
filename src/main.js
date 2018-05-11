@@ -8,6 +8,19 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import VueFire from 'vuefire'
 import App from './App'
+import linkify from 'vue-linkify'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import EmojiConvertor from 'emoji-js/lib/emoji.js'
+
+
+
+export const emojiConvertor = new EmojiConvertor();
+
+
+
+
 
 
 
@@ -23,13 +36,14 @@ Vue.use(VueFire)
     projectId: "test-chat-188d8",
     storageBucket: "test-chat-188d8.appspot.com",
     messagingSenderId: "1012304882000"
-  }
+}
+
+const settings = {timestampsInSnapshots: true}
 var firebaseApp = firebase.initializeApp(config)
 export const db = firebase.firestore()
+db.settings(settings)
 
-
-
-
+export const storage = firebase.storage();
 
 
 
@@ -55,6 +69,11 @@ Vue.mixin({
 })
 
 
+
+Vue.directive('linkified', linkify)
+Vue.use(BootstrapVue);
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -63,8 +82,6 @@ new Vue({
   
   
 })
-
-
 
 
 
